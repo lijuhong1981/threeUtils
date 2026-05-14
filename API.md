@@ -4,7 +4,7 @@
 <dt><a href="#intersect">intersect(object, raycaster, [intersects], [recursive], [ignoreInvisible], [checkIgnore])</a> ⇒ <code><a href="#Intersection">Array.&lt;Intersection&gt;</a></code></dt>
 <dd><p>检测对象与射线的相交情况，并将结果存储到相交结果数组中</p>
 <ul>
-<li>该方法基于threejs内部的intersect方法实现，增加了一个checkIgnore回调函数参数，用于在检测前检查是否需要忽略该对象，提升性能。</li>
+<li>该方法基于threejs内部的intersect方法实现，增加了ignoreInvisible参数和checkIgnore回调函数参数，用于在检测前检查是否需要跳过该对象，以提升性能。</li>
 </ul>
 </dd>
 <dt><a href="#intersectObject">intersectObject(object, raycaster, [intersects], [recursive], [ignoreInvisible], [checkIgnore])</a> ⇒ <code><a href="#Intersection">Array.&lt;Intersection&gt;</a></code></dt>
@@ -23,10 +23,16 @@
 <dd><p>为threejs的Vector2或Vector3或Vector4或Euler或Quaternion或Spherical对象赋值</p>
 </dd>
 <dt><a href="#traverse">traverse(object, callback)</a></dt>
-<dd><p>遍历对象及其子对象，执行回调函数，与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。</p>
+<dd><p>遍历对象及其子对象，执行回调函数</p>
+<ul>
+<li>与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。</li>
+</ul>
 </dd>
 <dt><a href="#traverseVisible">traverseVisible(object, callback)</a></dt>
-<dd><p>遍历对象及其子对象中可见的对象，执行回调函数，与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。</p>
+<dd><p>遍历对象及其子对象中可见的对象，执行回调函数</p>
+<ul>
+<li>与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。</li>
+</ul>
 </dd>
 </dl>
 
@@ -41,7 +47,7 @@
 <a name="intersect"></a>
 
 ## intersect(object, raycaster, [intersects], [recursive], [ignoreInvisible], [checkIgnore]) ⇒ [<code>Array.&lt;Intersection&gt;</code>](#Intersection)
-检测对象与射线的相交情况，并将结果存储到相交结果数组中- 该方法基于threejs内部的intersect方法实现，增加了一个checkIgnore回调函数参数，用于在检测前检查是否需要忽略该对象，提升性能。
+检测对象与射线的相交情况，并将结果存储到相交结果数组中- 该方法基于threejs内部的intersect方法实现，增加了ignoreInvisible参数和checkIgnore回调函数参数，用于在检测前检查是否需要跳过该对象，以提升性能。
 
 **Kind**: global function  
 **Returns**: [<code>Array.&lt;Intersection&gt;</code>](#Intersection) - 返回相交结果数组，如果没有相交对象，则返回空数组  
@@ -124,12 +130,12 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | vector | <code>Vector2</code> \| <code>Vector3</code> \| <code>Vector4</code> \| <code>Euler</code> \| <code>Quaternion</code> \| <code>Spherical</code> | 要赋值的Vector2或Vector3或Vector4或Euler或Quaternion或Spherical对象实例 |
-| value | <code>Array.&lt;number&gt;</code> \| <code>object</code> | 向量值，可以是一个包含分量的数组（如[1, 2, 3]表示一个三维向量），或者另一个具有相同属性的对象实例（如{ x: 1, y: 2, z: 3 }表示一个三维向量） |
+| value | <code>Array.&lt;number&gt;</code> \| <code>object</code> \| <code>number</code> | 向量值，可以是一个包含分量的数组（如[1, 2, 3]表示一个三维向量），或者另一个具有相同属性的对象实例（如{ x: 1, y: 2, z: 3 }表示一个三维向量），或者一个单一的数字（如0表示所有分量都设置为0） |
 
 <a name="traverse"></a>
 
 ## traverse(object, callback)
-遍历对象及其子对象，执行回调函数，与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。
+遍历对象及其子对象，执行回调函数- 与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。
 
 **Kind**: global function  
 
@@ -141,7 +147,7 @@
 <a name="traverseVisible"></a>
 
 ## traverseVisible(object, callback)
-遍历对象及其子对象中可见的对象，执行回调函数，与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。
+遍历对象及其子对象中可见的对象，执行回调函数- 与threejs的Object3D.traverse方法类似，但增加了一个回调函数返回参数，用于在遍历过程中检查是否需要停止遍历该对象的子对象，以提升性能。
 
 **Kind**: global function  
 
