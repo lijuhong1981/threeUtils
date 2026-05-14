@@ -17,7 +17,7 @@ import { InstancedMesh, Object3D, Points, Raycaster } from "three";
 
 /**
  * 检测对象与射线的相交情况，并将结果存储到相交结果数组中
- * - 该方法基于threejs内部的intersect方法实现，增加了一个checkIgnore回调函数参数，用于在检测前检查是否需要忽略该对象，提升性能。
+ * - 该方法基于threejs内部的intersect方法实现，增加了ignoreInvisible参数和checkIgnore回调函数参数，用于在检测前检查是否需要跳过该对象，以提升性能。
  * @param {Object3D} object - 要检测的对象实例
  * @param {Raycaster} raycaster - 射线发射器对象
  * @param {Array} [intersects] - 存储相交结果的数组，可不传
