@@ -1,0 +1,35 @@
+{
+  "name": "@lijuhong1981/threeutils",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "module": "index.js",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc2md --files src/*.js > API.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijuhong1981/threeUtils.git"
+  },
+  "keywords": [
+    "three",
+    "utils"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lijuhong1981/threeUtils/issues"
+  },
+  "homepage": "https://github.com/lijuhong1981/threeUtils#readme",
+  "dependencies": {
+    "three": "^0.171.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^9.1.3"
+  }
+}
