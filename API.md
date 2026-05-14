@@ -50,10 +50,10 @@
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| vector | <code>Vector2</code> \| <code>Vector3</code> \| <code>Vector4</code> \| <code>Euler</code> \| <code>Quaternion</code> \| <code>Spherical</code> | 
-| value | <code>Array.&lt;number&gt;</code> \| <code>object</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| vector | <code>Vector2</code> \| <code>Vector3</code> \| <code>Vector4</code> \| <code>Euler</code> \| <code>Quaternion</code> \| <code>Spherical</code> | 要赋值的Vector2或Vector3或Vector4或Euler或Quaternion或Spherical对象实例 |
+| value | <code>Array.&lt;number&gt;</code> \| <code>object</code> | 向量值，可以是一个包含分量的数组（如[1, 2, 3]表示一个三维向量），或者另一个具有相同属性的对象实例（如{ x: 1, y: 2, z: 3 }表示一个三维向量） |
 
 <a name="traverse"></a>
 
