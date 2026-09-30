@@ -61,7 +61,7 @@ function ascSort(a, b) {
  * @param {Function} [checkIgnore] - 是否忽略对象的回调函数，参数为对象实例，返回true表示忽略该对象，false表示不忽略，可不传
  * @returns {Array<Intersection>} 返回相交结果数组，按照距离从近到远排序，如果没有相交对象，则返回空数组
 */
-function intersectObject(object, raycaster, intersects, recursive, ignoreInvisible, checkIgnore) {
+function intersectObject(object, raycaster, intersects = [], recursive, ignoreInvisible, checkIgnore) {
     intersect(object, raycaster, intersects, recursive, ignoreInvisible, checkIgnore);
     intersects.sort(ascSort);
     return intersects;
