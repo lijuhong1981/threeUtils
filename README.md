@@ -8,7 +8,7 @@
 - 🎯 **相交检测**：支持忽略不可见对象、自定义忽略回调，结果按距离由近到远排序
 - 🎨 **赋值**：统一处理 `Color` / `Vector` / `Euler` / `Quaternion` / `Spherical` / `Object3D` 的参数赋值
 - 🌳 **按需引入**：ES Module，支持 tree-shaking
-- 📦 **零额外依赖**：仅依赖 `three`
+- 📦 **three 作为 peerDependency**：不重复打包 three，避免多实例导致的 `instanceof` 失效与体积膨胀
 
 ## 安装
 
@@ -16,7 +16,7 @@
 npm install @lijuhong1981/three.utils
 ```
 
-> 要求 `three >= 0.171.0`，且需在 ES Module 项目中使用。
+> `three`（`>= 0.171.0`）为 peerDependency，需由使用方自行安装（npm 7+ 会自动补装），且需在 ES Module 项目中使用。
 
 ## 使用
 
